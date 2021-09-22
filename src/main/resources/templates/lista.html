@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title> Lista de Empregos </title>
+</head>
+<body>
+    <h1> Formulario de Emprego </h1>
+
+    <a href="/add"> Adicionar novo Emprego  </a>
+
+    <div th:each="emprego : ${empregos}">
+        <h4 th:inline="text"> [[${emprego.titulo}]] na [[${emprego.empresa}]] </h4>
+        <p th:text="${emprego.descricao}"></p>
+    </div>
+</body>
+</html>

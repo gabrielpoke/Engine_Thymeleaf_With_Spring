@@ -24,7 +24,7 @@ public class EmpregoController {
 
         model.addAttribute("empregos", repository.findAll());
 
-        return "list";
+        return "lista";
 
     }
 
