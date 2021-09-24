@@ -10,4 +10,9 @@ public class LoginController {
     public String Login(){
         return "login";
     }
+
+    @RequestMapping("/admin")
+    public String adm(){
+        return "admin";
+    }
 }
