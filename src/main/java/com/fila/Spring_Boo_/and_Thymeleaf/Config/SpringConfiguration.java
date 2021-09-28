@@ -36,8 +36,8 @@ public class SpringConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.authorizeRequests().antMatchers("/").access("hasAnyAuthority('ADM')").
-                antMatchers("/admin").access("hasAnyAuthority('ADM')").anyRequest()
+        http.authorizeRequests().antMatchers("/").access("hasAnyAuthority('ADMIN')").
+                antMatchers("/admin").access("hasAnyAuthority('ADMIN')").anyRequest()
                 .authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll().permitAll()
@@ -52,7 +52,7 @@ public class SpringConfiguration extends WebSecurityConfigurerAdapter {
 //       auth.inMemoryAuthentication()
 //               .withUser("user").password(passwordEncoder().encode("password")).authorities("USER")
 //               .and()
-//               .withUser("ADM").password(passwordEncoder().encode("123")).authorities("ADM");
+//               .withUser("ADM").password(passwordEncoder().encode("123")).authorities("ADMIN");
 
         auth.userDetailsService(userDetailsServiceBean()).passwordEncoder(passwordEncoder());
 

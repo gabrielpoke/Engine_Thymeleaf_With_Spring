@@ -4,16 +4,16 @@ import com.fila.Spring_Boo_.and_Thymeleaf.Model.Role;
 import com.fila.Spring_Boo_.and_Thymeleaf.Model.Usuarios;
 import com.fila.Spring_Boo_.and_Thymeleaf.Repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.Transient;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Transient
+@Transactional
 @Service
 public class SSUserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
